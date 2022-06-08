@@ -4,6 +4,9 @@ const wordSearch = (letters, word) => {
     let transposition = verticalWordSearch(letters);
     result = horizontalwordSearch(transposition, word);
   }
+  if (letters.length === 0 || word.length === 0) {
+    return false;
+  }
   return result;
 };
 
@@ -12,7 +15,6 @@ const horizontalwordSearch = (letters, word) => {
   if (!letters) {
     return false
   }
-
   const horizontalJoin = letters.map(ls => ls.join(''))
     for (l of horizontalJoin) {
       if (l.includes(word)) {
@@ -32,7 +34,7 @@ for (let i = 0; i < letters[0].length; i++) {
 for (let j = 0; j < letters.length; j++) {
   result[i][j] = letters[j][i];
   }
-console.log (result);
+// console.log (result);
 return result;
  }
 };
