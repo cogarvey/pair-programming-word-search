@@ -32,7 +32,49 @@ describe("#wordSearch()", function() {
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
     ], 'SEINFELD')
-
     assert.isTrue(result);
+  });
+  it("should return false if the word is NOT present(vertically)", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'O', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'O', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'V', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'E', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'LOVE')
+    assert.isFalse(result);
+  });
+
+  it("should return true if the word is present(vertically)", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'L', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'O', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'V', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'E', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'LOVE')
+    assert.isTrue(result);
+  });
+  it("should return false if word is an empty string", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'L', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'O', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'V', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'E', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], '')
+    assert.isFalse(result);
   });
 });
